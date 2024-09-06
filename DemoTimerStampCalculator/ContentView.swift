@@ -8,40 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
-
     @ObservedObject var timerViewModel = TimerCalculatorViewModel()
-    var timerIsActive: Bool {
-        timerViewModel.timerValue != nil
-    }
+    
     var body: some View {
-        VStack {
+        VStack(alignment: .center, spacing: 24) {
             VStack {
-                Text("\(format(date: timerViewModel.date))")
+                Text("\(DateHelper.format(date: timerViewModel.date))")
                     .font(.largeTitle)
-                    
-                    
-                HStack(alignment: .top) {
-                   TimerControl(
-                    iconName: timerIsActive ? "play" : "pause",
-                    action: timerIsActive ? timerViewModel.pause : timerViewModel.tick
-                   )
-                
-                    
-                    Button(action: {
-                        timerViewModel.resetTimer()
-                    }) {
-                        Text("Reset")
-                    }
-                }
             }
-            .padding()
             .foregroundColor(.white)
-           
-            
-            
+            ControlsView(
+                timerIsActive: $timerViewModel.isTimerActive,
+                stopTimerAction: timerViewModel.stopTimer,
+                startTimerAction: timerViewModel.tick,
+                resetTimerAction: timerViewModel.resetTimer
+            )
             List {
                 ForEach(timerViewModel.dates, id: \.self) { date in
-                Text(format(date: date))}
+                    Text(DateHelper.format(date: date))}
             }
             .labelStyle(.titleAndIcon)
             .listStyle(.plain)
@@ -50,12 +34,6 @@ struct ContentView: View {
         .padding()
         .background(.black.opacity(0.8))
     }
-
-    func format(date: Date) -> String {
-        let dateFormater = DateFormatter()
-        dateFormater.dateFormat = "hh:mm ss a"
-        return dateFormater.string(from: date)
-    }
 }
 
 struct TimerControl: View {
@@ -63,10 +41,32 @@ struct TimerControl: View {
     let action: () -> Void
     
     var body: some View {
-        Image(systemName: iconName)
-            .onTapGesture {
-                action()
-            }
+        Button(action: action) {
+            Image(systemName: iconName)
+        }
+        
+    }
+}
+
+struct ControlsView: View {
+    @Binding var timerIsActive: Bool
+    let stopTimerAction: () -> Void
+    let startTimerAction: () -> Void
+    let resetTimerAction: () -> Void
+    
+    var body: some View {
+        HStack(alignment: .center) {
+            TimerControl(
+                iconName: timerIsActive ? "pause" : "play" ,
+                action: timerIsActive ? stopTimerAction :
+                    startTimerAction
+            )
+            TimerControl(iconName: "gobackward",
+                         action: resetTimerAction
+            )
+        }
+        .font(.headline)
+        .foregroundColor(.white)
     }
 }
 

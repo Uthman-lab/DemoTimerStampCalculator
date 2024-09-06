@@ -14,6 +14,8 @@
 		C01BF6422C8897E300397126 /* DemoTimerStampCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01BF6412C8897E300397126 /* DemoTimerStampCalculatorTests.swift */; };
 		C01BF65B2C88984400397126 /* TimerCalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01BF65A2C88984400397126 /* TimerCalculatorViewModel.swift */; };
 		C01BF65D2C8A773100397126 /* TimerCalculatorViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01BF65C2C8A773100397126 /* TimerCalculatorViewModelTest.swift */; };
+		C01BF65F2C8B044200397126 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01BF65E2C8B044200397126 /* DateHelper.swift */; };
+		C01BF6612C8B05C000397126 /* DateHelperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01BF6602C8B05C000397126 /* DateHelperTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		C01BF6412C8897E300397126 /* DemoTimerStampCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTimerStampCalculatorTests.swift; sourceTree = "<group>"; };
 		C01BF65A2C88984400397126 /* TimerCalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCalculatorViewModel.swift; sourceTree = "<group>"; };
 		C01BF65C2C8A773100397126 /* TimerCalculatorViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCalculatorViewModelTest.swift; sourceTree = "<group>"; };
+		C01BF65E2C8B044200397126 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		C01BF6602C8B05C000397126 /* DateHelperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelperTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 				C01BF6302C8897E000397126 /* DemoTimerStampCalculatorApp.swift */,
 				C01BF6322C8897E000397126 /* ContentView.swift */,
 				C01BF65A2C88984400397126 /* TimerCalculatorViewModel.swift */,
+				C01BF65E2C8B044200397126 /* DateHelper.swift */,
 				C01BF6342C8897E200397126 /* Assets.xcassets */,
 				C01BF6362C8897E200397126 /* Preview Content */,
 			);
@@ -99,6 +104,7 @@
 			children = (
 				C01BF6412C8897E300397126 /* DemoTimerStampCalculatorTests.swift */,
 				C01BF65C2C8A773100397126 /* TimerCalculatorViewModelTest.swift */,
+				C01BF6602C8B05C000397126 /* DateHelperTest.swift */,
 			);
 			path = DemoTimerStampCalculatorTests;
 			sourceTree = "<group>";
@@ -204,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C01BF6332C8897E000397126 /* ContentView.swift in Sources */,
+				C01BF65F2C8B044200397126 /* DateHelper.swift in Sources */,
 				C01BF65B2C88984400397126 /* TimerCalculatorViewModel.swift in Sources */,
 				C01BF6312C8897E000397126 /* DemoTimerStampCalculatorApp.swift in Sources */,
 			);
@@ -213,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C01BF6612C8B05C000397126 /* DateHelperTest.swift in Sources */,
 				C01BF65D2C8A773100397126 /* TimerCalculatorViewModelTest.swift in Sources */,
 				C01BF6422C8897E300397126 /* DemoTimerStampCalculatorTests.swift in Sources */,
 			);

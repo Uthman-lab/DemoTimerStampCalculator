@@ -27,7 +27,7 @@ final class TimerCalculatorViewModelTest: XCTestCase {
         viewModel.tick()
         
         // When
-        viewModel.pause()
+        viewModel.stopTimer()
         
         // Then
         XCTAssertEqual(viewModel.timerValue, nil)

@@ -9,17 +9,23 @@ import Foundation
 
 
 final class TimerCalculatorViewModel: ObservableObject {
+    
+    // MARK: life cycle methods
+    
     init(timer: Timer? = nil) {
         self.timer = timer
         tick()
     }
     
     // MARK: public variables
+    
     @Published var seconds = 0
     @Published var startDate = Date()
     @Published var date: Date = Date()
     @Published var dates: [Date] = []
+    @Published var isTimerActive = false
     let interval: TimeInterval = 1
+    let intervalToRecordDatesInSeconds = 20
     
     // MARK: private variables
     
@@ -30,30 +36,34 @@ final class TimerCalculatorViewModel: ObservableObject {
     
     // MARK: public functions
     
-    func pause() {
+    func stopTimer() {
         timer?.invalidate()
+        isTimerActive = false
         timer = nil
     }
     
     func tick() {
-        pause()
-        self.timer = Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { t in
+        stopTimer()
+        isTimerActive = true
+        self.timer = Timer.scheduledTimer(
+            withTimeInterval: interval,
+            repeats: true
+        ) { t in
             self.date = t.fireDate
-            print("printing")
             self.recordIntervals(date: t.fireDate)
         }
     }
     
     func resetTimer() {
         date = startDate
-        timer?.invalidate()
-        timer = nil
+        stopTimer()
     }
+    
     // MARK: private functions
     
     private func recordIntervals(date: Date) {
         let difference = calculateInterval()
-        if difference % 5 == 0 {
+        if difference % intervalToRecordDatesInSeconds == 0 {
             dates.append(date)
         }
     }

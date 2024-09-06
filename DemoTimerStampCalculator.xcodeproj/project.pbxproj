@@ -82,9 +82,9 @@
 			isa = PBXGroup;
 			children = (
 				C01BF6302C8897E000397126 /* DemoTimerStampCalculatorApp.swift */,
-				C01BF6322C8897E000397126 /* ContentView.swift */,
-				C01BF65A2C88984400397126 /* TimerCalculatorViewModel.swift */,
-				C01BF65E2C8B044200397126 /* DateHelper.swift */,
+				C01BF6622C8B087B00397126 /* ViewModel */,
+				C01BF6642C8B08E400397126 /* Views */,
+				C01BF6632C8B08B400397126 /* Helpers */,
 				C01BF6342C8897E200397126 /* Assets.xcassets */,
 				C01BF6362C8897E200397126 /* Preview Content */,
 			);
@@ -107,6 +107,30 @@
 				C01BF6602C8B05C000397126 /* DateHelperTest.swift */,
 			);
 			path = DemoTimerStampCalculatorTests;
+			sourceTree = "<group>";
+		};
+		C01BF6622C8B087B00397126 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C01BF65A2C88984400397126 /* TimerCalculatorViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C01BF6632C8B08B400397126 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C01BF65E2C8B044200397126 /* DateHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		C01BF6642C8B08E400397126 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C01BF6322C8897E000397126 /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

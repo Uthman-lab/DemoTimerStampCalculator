@@ -22,12 +22,34 @@ final class TimerCalculatorViewModelTest: XCTestCase {
         timer = nil
     }
     
-    func testPause() {
+    func testPause_ShouldSetTimerToNil() {
         // Given
         viewModel.tick()
         
         // When
         viewModel.pause()
+        
+        // Then
+        XCTAssertEqual(viewModel.timerValue, nil)
+    }
+    
+    func testReset_ShouldSetDateToStartDate() {
+        // Given
+        viewModel.tick()
+        
+        // When
+        viewModel.resetTimer()
+        
+        // Then
+        XCTAssertEqual(viewModel.date, viewModel.startDate)
+    }
+    
+    func testReset_ShouldSetTimerValueToNil() {
+        // Given
+        viewModel.tick()
+        
+        // When
+        viewModel.resetTimer()
         
         // Then
         XCTAssertEqual(viewModel.timerValue, nil)

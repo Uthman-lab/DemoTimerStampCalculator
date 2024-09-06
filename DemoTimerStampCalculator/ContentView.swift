@@ -10,22 +10,34 @@ import SwiftUI
 struct ContentView: View {
 
     @ObservedObject var timerViewModel = TimerCalculatorViewModel()
+    var timerIsActive: Bool {
+        timerViewModel.timerValue != nil
+    }
     var body: some View {
         VStack {
-            Text("\(format(date: timerViewModel.date))")
+            VStack {
+                Text("\(format(date: timerViewModel.date))")
+                    .font(.largeTitle)
+                    
+                    
+                HStack(alignment: .top) {
+                   TimerControl(
+                    iconName: timerIsActive ? "play" : "pause",
+                    action: timerIsActive ? timerViewModel.pause : timerViewModel.tick
+                   )
                 
-            HStack(alignment: .top) {
-                Button(action: {
-                    timerViewModel.pause()
-                }) {
-                    Text("Pause")
-                }
-                Button(action: {
-                    timerViewModel.tick()
-                }) {
-                    Text("Start")
+                    
+                    Button(action: {
+                        timerViewModel.resetTimer()
+                    }) {
+                        Text("Reset")
+                    }
                 }
             }
+            .padding()
+            .foregroundColor(.white)
+           
+            
             
             List {
                 ForEach(timerViewModel.dates, id: \.self) { date in
@@ -36,12 +48,25 @@ struct ContentView: View {
             
         }
         .padding()
+        .background(.black.opacity(0.8))
     }
 
     func format(date: Date) -> String {
         let dateFormater = DateFormatter()
         dateFormater.dateFormat = "hh:mm ss a"
         return dateFormater.string(from: date)
+    }
+}
+
+struct TimerControl: View {
+    let iconName: String
+    let action: () -> Void
+    
+    var body: some View {
+        Image(systemName: iconName)
+            .onTapGesture {
+                action()
+            }
     }
 }
 

@@ -11,6 +11,7 @@ import Foundation
 final class TimerCalculatorViewModel: ObservableObject {
     init(timer: Timer? = nil) {
         self.timer = timer
+        tick()
     }
     
     // MARK: public variables
@@ -35,7 +36,7 @@ final class TimerCalculatorViewModel: ObservableObject {
     }
     
     func tick() {
-        print("hello")
+        pause()
         self.timer = Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { t in
             self.date = t.fireDate
             print("printing")
@@ -43,6 +44,11 @@ final class TimerCalculatorViewModel: ObservableObject {
         }
     }
     
+    func resetTimer() {
+        date = startDate
+        timer?.invalidate()
+        timer = nil
+    }
     // MARK: private functions
     
     private func recordIntervals(date: Date) {

@@ -12,20 +12,12 @@
 		C01BF6352C8897E200397126 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C01BF6342C8897E200397126 /* Assets.xcassets */; };
 		C01BF6382C8897E200397126 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C01BF6372C8897E200397126 /* Preview Assets.xcassets */; };
 		C01BF6422C8897E300397126 /* DemoTimerStampCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01BF6412C8897E300397126 /* DemoTimerStampCalculatorTests.swift */; };
-		C01BF64C2C8897E300397126 /* DemoTimerStampCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01BF64B2C8897E300397126 /* DemoTimerStampCalculatorUITests.swift */; };
-		C01BF64E2C8897E300397126 /* DemoTimerStampCalculatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01BF64D2C8897E300397126 /* DemoTimerStampCalculatorUITestsLaunchTests.swift */; };
 		C01BF65B2C88984400397126 /* TimerCalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01BF65A2C88984400397126 /* TimerCalculatorViewModel.swift */; };
+		C01BF65D2C8A773100397126 /* TimerCalculatorViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01BF65C2C8A773100397126 /* TimerCalculatorViewModelTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		C01BF63E2C8897E300397126 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C01BF6252C8897E000397126 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C01BF62C2C8897E000397126;
-			remoteInfo = DemoTimerStampCalculator;
-		};
-		C01BF6482C8897E300397126 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C01BF6252C8897E000397126 /* Project object */;
 			proxyType = 1;
@@ -42,10 +34,8 @@
 		C01BF6372C8897E200397126 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C01BF63D2C8897E300397126 /* DemoTimerStampCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoTimerStampCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C01BF6412C8897E300397126 /* DemoTimerStampCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTimerStampCalculatorTests.swift; sourceTree = "<group>"; };
-		C01BF6472C8897E300397126 /* DemoTimerStampCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoTimerStampCalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C01BF64B2C8897E300397126 /* DemoTimerStampCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTimerStampCalculatorUITests.swift; sourceTree = "<group>"; };
-		C01BF64D2C8897E300397126 /* DemoTimerStampCalculatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTimerStampCalculatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C01BF65A2C88984400397126 /* TimerCalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCalculatorViewModel.swift; sourceTree = "<group>"; };
+		C01BF65C2C8A773100397126 /* TimerCalculatorViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCalculatorViewModelTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,13 +53,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C01BF6442C8897E300397126 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -78,7 +61,6 @@
 			children = (
 				C01BF62F2C8897E000397126 /* DemoTimerStampCalculator */,
 				C01BF6402C8897E300397126 /* DemoTimerStampCalculatorTests */,
-				C01BF64A2C8897E300397126 /* DemoTimerStampCalculatorUITests */,
 				C01BF62E2C8897E000397126 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,7 +70,6 @@
 			children = (
 				C01BF62D2C8897E000397126 /* DemoTimerStampCalculator.app */,
 				C01BF63D2C8897E300397126 /* DemoTimerStampCalculatorTests.xctest */,
-				C01BF6472C8897E300397126 /* DemoTimerStampCalculatorUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,17 +98,9 @@
 			isa = PBXGroup;
 			children = (
 				C01BF6412C8897E300397126 /* DemoTimerStampCalculatorTests.swift */,
+				C01BF65C2C8A773100397126 /* TimerCalculatorViewModelTest.swift */,
 			);
 			path = DemoTimerStampCalculatorTests;
-			sourceTree = "<group>";
-		};
-		C01BF64A2C8897E300397126 /* DemoTimerStampCalculatorUITests */ = {
-			isa = PBXGroup;
-			children = (
-				C01BF64B2C8897E300397126 /* DemoTimerStampCalculatorUITests.swift */,
-				C01BF64D2C8897E300397126 /* DemoTimerStampCalculatorUITestsLaunchTests.swift */,
-			);
-			path = DemoTimerStampCalculatorUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,24 +141,6 @@
 			productReference = C01BF63D2C8897E300397126 /* DemoTimerStampCalculatorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		C01BF6462C8897E300397126 /* DemoTimerStampCalculatorUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C01BF6572C8897E300397126 /* Build configuration list for PBXNativeTarget "DemoTimerStampCalculatorUITests" */;
-			buildPhases = (
-				C01BF6432C8897E300397126 /* Sources */,
-				C01BF6442C8897E300397126 /* Frameworks */,
-				C01BF6452C8897E300397126 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C01BF6492C8897E300397126 /* PBXTargetDependency */,
-			);
-			name = DemoTimerStampCalculatorUITests;
-			productName = DemoTimerStampCalculatorUITests;
-			productReference = C01BF6472C8897E300397126 /* DemoTimerStampCalculatorUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -200,10 +155,6 @@
 						CreatedOnToolsVersion = 15.3;
 					};
 					C01BF63C2C8897E300397126 = {
-						CreatedOnToolsVersion = 15.3;
-						TestTargetID = C01BF62C2C8897E000397126;
-					};
-					C01BF6462C8897E300397126 = {
 						CreatedOnToolsVersion = 15.3;
 						TestTargetID = C01BF62C2C8897E000397126;
 					};
@@ -224,7 +175,6 @@
 			targets = (
 				C01BF62C2C8897E000397126 /* DemoTimerStampCalculator */,
 				C01BF63C2C8897E300397126 /* DemoTimerStampCalculatorTests */,
-				C01BF6462C8897E300397126 /* DemoTimerStampCalculatorUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -240,13 +190,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C01BF63B2C8897E300397126 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C01BF6452C8897E300397126 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -270,16 +213,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C01BF65D2C8A773100397126 /* TimerCalculatorViewModelTest.swift in Sources */,
 				C01BF6422C8897E300397126 /* DemoTimerStampCalculatorTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C01BF6432C8897E300397126 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C01BF64C2C8897E300397126 /* DemoTimerStampCalculatorUITests.swift in Sources */,
-				C01BF64E2C8897E300397126 /* DemoTimerStampCalculatorUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,11 +225,6 @@
 			isa = PBXTargetDependency;
 			target = C01BF62C2C8897E000397126 /* DemoTimerStampCalculator */;
 			targetProxy = C01BF63E2C8897E300397126 /* PBXContainerItemProxy */;
-		};
-		C01BF6492C8897E300397126 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C01BF62C2C8897E000397126 /* DemoTimerStampCalculator */;
-			targetProxy = C01BF6482C8897E300397126 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -516,42 +446,6 @@
 			};
 			name = Release;
 		};
-		C01BF6582C8897E300397126 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R85N7Z4DTZ;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = amalitech.DemoTimerStampCalculatorUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DemoTimerStampCalculator;
-			};
-			name = Debug;
-		};
-		C01BF6592C8897E300397126 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R85N7Z4DTZ;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = amalitech.DemoTimerStampCalculatorUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DemoTimerStampCalculator;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -578,15 +472,6 @@
 			buildConfigurations = (
 				C01BF6552C8897E300397126 /* Debug */,
 				C01BF6562C8897E300397126 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C01BF6572C8897E300397126 /* Build configuration list for PBXNativeTarget "DemoTimerStampCalculatorUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C01BF6582C8897E300397126 /* Debug */,
-				C01BF6592C8897E300397126 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

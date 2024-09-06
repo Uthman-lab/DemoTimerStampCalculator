@@ -8,30 +8,36 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    @State var seconds = Date()
+
+    @ObservedObject var timerViewModel = TimerCalculatorViewModel()
     var body: some View {
         VStack {
-            Text("\(format(date: seconds)) seconds")
-                .onReceive(timer, perform: { value in
-                    seconds = value
-                })
-            HStack {
+            Text("\(format(date: timerViewModel.date))")
+                
+            HStack(alignment: .top) {
                 Button(action: {
-                    timer.upstream.connect().cancel()
+                    timerViewModel.pause()
                 }) {
-                    Text("Pauuse")
+                    Text("Pause")
                 }
                 Button(action: {
-                  timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+                    timerViewModel.tick()
                 }) {
                     Text("Start")
                 }
             }
+            
+            List {
+                ForEach(timerViewModel.dates, id: \.self) { date in
+                Text(format(date: date))}
+            }
+            .labelStyle(.titleAndIcon)
+            .listStyle(.plain)
+            
         }
         .padding()
     }
-    
+
     func format(date: Date) -> String {
         let dateFormater = DateFormatter()
         dateFormater.dateFormat = "hh:mm ss a"

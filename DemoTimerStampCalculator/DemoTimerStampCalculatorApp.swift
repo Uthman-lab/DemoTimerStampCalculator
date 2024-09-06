@@ -9,9 +9,23 @@ import SwiftUI
 
 @main
 struct DemoTimerStampCalculatorApp: App {
+    let isProduction: Bool = {
+     NSClassFromString("XCTestCase") == nil
+    }()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if isProduction {
+                ContentView()
+            } else {
+                TestApp()
+            }
         }
+    }
+}
+
+struct TestApp: View {
+    var body: some View {
+       EmptyView()
     }
 }
